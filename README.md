@@ -1,27 +1,122 @@
-# AngularTranslate
+```
+npm install @ngx-translate/core --save
+npm install @ngx-translate/http-loader --save
+```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.1.
+```
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+````
 
-## Development server
+```
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+HttpClientModule,
+TranslateModule.forRoot({
+    loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+    }
+})
+```
 
-## Code scaffolding
+```
+import {TranslateService} from '@ngx-translate/core';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+export class AppComponent {
 
-## Build
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+en.json
+```
+{
+  "HELLO": "hello world"
+}
+```
 
-## Running unit tests
+es.json
+```
+{
+  "HELLO": "hola mundo"
+}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+<div>{{ 'HELLO' | translate }}</div>
+```
 
-## Running end-to-end tests
+```
+translate.get('HELLO')
+.subscribe((res: string) => {
+  console.log(res);
+  //=> 'hello world'
+});
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+export class AppComponent {
+  title = 'angular-translate';
+  langs: string[] = [];
 
-## Further help
+  constructor(
+    private translate: TranslateService
+  ) {
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');
+    this.translate.addLangs(['es', 'en']);
+    this.langs = this.translate.getLangs();
+  }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  changeLang(lang: string) {
+    this.translate.use(lang);
+  }
+}
+```
+
+````
+<label>
+  change
+  <select #langSelect (change)="changeLang(langSelect.value)">
+    <option *ngFor="let lang of langs" [value]="lang">
+      {{ lang }}
+    </option>
+  </select>
+</label>
+````
+
+
+```
+<div>{{ 'GREETING' | translate:{name:'nicolas'} }}</div>
+```
+
+````
+"GREETING": "Hello {{name}}, nice to meet you."
+"GREETING": "Hola {{name}}, un gusto conocerte."
+```
+
+````
+this.translate.stream('GREETING', {name: 'nicolas'})
+.subscribe((res: string) => {
+  console.log(res);
+});
+```
+
+```
+"GREETING": "Hello  <strong>{{name}}</strong>, nice to meet you.",
+"GREETING": "Hola <strong>{{name}}</strong>, un gusto conocerte."
+```
+
+```
+<div [innerHTML]="'GREETING' | translate:{name: 'nicolas'}"></div>
+```

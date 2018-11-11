@@ -1,0 +1,4 @@
+{
+  "HELLO": "hello world",
+  "GREETING": "Hello  <strong>{{name}}</strong>, nice to meet you."
+}
