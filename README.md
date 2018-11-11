@@ -120,3 +120,6 @@ this.translate.stream('GREETING', {name: 'nicolas'})
 ```
 <div [innerHTML]="'GREETING' | translate:{name: 'nicolas'}"></div>
 ```
+```
+import { TranslateModule } from '@ngx-translate/core';
+```
