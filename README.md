@@ -1,3 +1,5 @@
+![Imgur](https://i.imgur.com/0i3fA0X.png)
+
 ```
 npm install @ngx-translate/core --save
 npm install @ngx-translate/http-loader --save
