@@ -21,6 +21,9 @@ export class AppComponent {
     .subscribe((res: string) => {
       console.log(res);
     });
+    const error = 'Error 404';
+    this.translate.instant('Error');
+    this.translate.instant(error);
     this.translate.stream('GREETING', {name: 'nicolas'})
     .subscribe((res: string) => {
       console.log(res);

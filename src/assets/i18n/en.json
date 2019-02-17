@@ -1,4 +1,10 @@
 {
-  "HELLO": "hello world",
-  "GREETING": "Hello  <strong>{{name}}</strong>, nice to meet you."
+	"CLI Documentation": "CLI Documentation",
+	"Error": "",
+	"Error 404": "Error 404",
+	"GREETING": "Hello  <strong>{{name}}</strong>, nice to meet you.",
+	"HELLO": "hello world",
+	"Tour of Heroes": "Tour of Heroes",
+	"Welcome to": "Welcome to",
+	"change": "change"
 }
