@@ -1,10 +1,4 @@
 {
-	"CLI Documentation": "Documentación CLI",
-	"Error": "",
-	"Error 404": "Error 404",
 	"GREETING": "Hola <strong>{{name}}</strong>, un gusto conocerte.",
-	"HELLO": "hola mundo",
-	"Tour of Heroes": "Tour de heroes",
-	"Welcome to": "Bienvenido a",
-	"change": "cambiar"
+	"HELLO": "hola mundo"
 }
