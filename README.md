@@ -41,6 +41,7 @@ export class AppComponent {
 ```
 
 en.json
+
 ```
 {
   "HELLO": "hello world"
@@ -48,6 +49,7 @@ en.json
 ```
 
 es.json
+
 ```
 {
   "HELLO": "hola mundo"
@@ -122,6 +124,7 @@ this.translate.stream('GREETING', {name: 'nicolas'})
 ```
 <div [innerHTML]="'GREETING' | translate:{name: 'nicolas'}"></div>
 ```
+
 ```
 import { TranslateModule } from '@ngx-translate/core';
 ```
