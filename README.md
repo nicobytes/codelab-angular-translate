@@ -129,7 +129,7 @@ this.translate.stream('GREETING', {name: 'nicolas'})
 import { TranslateModule } from '@ngx-translate/core';
 ```
 
-[!Imgur](https://i.imgur.com/zdwScTD.png)
+![Imgur](https://i.imgur.com/zdwScTD.png)
 
 ```
 npm install @biesbjerg/ngx-translate-extract --save-dev
