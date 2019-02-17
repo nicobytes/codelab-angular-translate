@@ -104,12 +104,12 @@ export class AppComponent {
 <div>{{ 'GREETING' | translate:{name:'nicolas'} }}</div>
 ```
 
-````
+```
 "GREETING": "Hello {{name}}, nice to meet you."
 "GREETING": "Hola {{name}}, un gusto conocerte."
 ```
 
-````
+```
 this.translate.stream('GREETING', {name: 'nicolas'})
 .subscribe((res: string) => {
   console.log(res);
