@@ -21,6 +21,7 @@ export class AppComponent {
     .subscribe((res: string) => {
       console.log(res);
     });
+    this.translate.instant('Error');
     this.translate.stream('GREETING', {name: 'nicolas'})
     .subscribe((res: string) => {
       console.log(res);
@@ -29,5 +30,11 @@ export class AppComponent {
 
   changeLang(lang: string) {
     this.translate.use(lang);
+  }
+
+  showAlert() {
+    const error = 'user no found';
+    const msg = this.translate.instant(error);
+    alert(msg);
   }
 }

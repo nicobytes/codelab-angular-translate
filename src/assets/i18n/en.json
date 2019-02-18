@@ -1,4 +1,9 @@
 {
+	"Error": "",
 	"GREETING": "Hello  <strong>{{name}}</strong>, nice to meet you.",
-	"HELLO": "hello world"
+	"HELLO": "hello world",
+	"Tour of Heroes": "Tour of Heroes",
+	"Welcome to": "Welcome to",
+	"change": "Change",
+	"user no found": "user no found"
 }
