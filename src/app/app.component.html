@@ -1,18 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    {{ 'Welcome to' | translate }} {{ title }}!
   </h1>
   <div>{{ 'HELLO' | translate }}</div>
   <div [innerHTML]="'GREETING' | translate:{name: 'nicolas'}"></div>
   <label>
-    change
+    {{ 'change' | translate }}
     <select #langSelect (change)="changeLang(langSelect.value)">
       <option *ngFor="let lang of langs" [value]="lang">
         {{ lang }}
       </option>
     </select>
   </label>
+  <button (click)="showAlert()">click</button>
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>

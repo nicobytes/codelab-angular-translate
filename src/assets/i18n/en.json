@@ -1,4 +1,7 @@
 {
+	"Error 404": "not found",
 	"GREETING": "Hello  <strong>{{name}}</strong>, nice to meet you.",
-	"HELLO": "hello world"
+	"HELLO": "hello world",
+	"Welcome to": "Welcome to",
+	"change": "change"
 }

@@ -1,4 +1,7 @@
 {
+	"Error 404": "not encontrado",
 	"GREETING": "Hola <strong>{{name}}</strong>, un gusto conocerte.",
-	"HELLO": "hola mundo"
+	"HELLO": "hola mundo",
+	"Welcome to": "Bienvenido a",
+	"change": "cambiar"
 }

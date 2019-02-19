@@ -30,4 +30,10 @@ export class AppComponent {
   changeLang(lang: string) {
     this.translate.use(lang);
   }
+
+  showAlert() {
+    const error = 'Error 404';
+    const msg = this.translate.instant(error);
+    alert(msg);
+  }
 }
